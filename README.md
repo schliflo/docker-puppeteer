@@ -11,7 +11,7 @@ and [screenshots scripts](#screenshots-tools)
 ```
 docker pull schliflo/docker-puppeteer:latest
 # OR
-docker pull schliflo/docker-puppeteer:1.12.0
+docker pull schliflo/docker-puppeteer:2.1.0
 ```
 
 ## before usage
