@@ -4,7 +4,10 @@ ENV APPLICATION_USER=pptruser \
     APPLICATION_GROUP=pptruser \
     NODE_PATH="/usr/local/share/.config/yarn/global/node_modules:${NODE_PATH}" \
     PATH="/tools:${PATH}" \
-    LANG="C.UTF-8"
+    LANG="C.UTF-8" \
+    PPTR_VERSION=2.1.0
+
+COPY ./tools /tools
 
 RUN apt-get update \
     && apt-get install -yq \
@@ -63,18 +66,7 @@ RUN apt-get update \
     && mkdir -p /usr/local/share/.config/yarn/global/node_modules \
     && mkdir -p /screenshots \
     && mkdir -p /app \
-    && mkdir -p /tools \
-    && chown -R $APPLICATION_USER:$APPLICATION_GROUP /home/pptruser \
-    && chown -R $APPLICATION_USER:$APPLICATION_GROUP /usr/local/share/.config/yarn/global/node_modules \
-    && chown -R $APPLICATION_USER:$APPLICATION_GROUP /screenshots \
-    && chown -R $APPLICATION_USER:$APPLICATION_GROUP /app \
-    && chown -R $APPLICATION_USER:$APPLICATION_GROUP /tools
-
-COPY ./tools /tools
-
-ENV PPTR_VERSION=2.1.0
-
-RUN fix_permissions \
+    && fix_permissions \
     && yarn global add \
         puppeteer@$PPTR_VERSION \
     && yarn cache clean \
