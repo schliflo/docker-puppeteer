@@ -67,7 +67,7 @@ RUN apt-get update \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /home/pptruser \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /usr/local/share/.config/yarn/global/node_modules \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /screenshots \
-    && chown -R $APPLICATION_USER:$APPLICATION_GROUP /app
+    && chown -R $APPLICATION_USER:$APPLICATION_GROUP /app \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /tools
 
 COPY --chown=$APPLICATION_USER:$APPLICATION_GROUP ./tools /tools
