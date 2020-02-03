@@ -59,13 +59,16 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd -r $APPLICATION_GROUP \
     && useradd -r -g $APPLICATION_USER -G audio,video $APPLICATION_GROUP \
+    && mkdir -p /home/pptruser/Downloads \
+    && mkdir -p /usr/local/share/.config/yarn/global/node_modules \
     && mkdir -p /screenshots \
     && mkdir -p /app \
-    && mkdir -p /home/pptruser/Downloads \
+    && mkdir -p /tools \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /home/pptruser \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /usr/local/share/.config/yarn/global/node_modules \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /screenshots \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /app
+    && chown -R $APPLICATION_USER:$APPLICATION_GROUP /tools
 
 COPY --chown=$APPLICATION_USER:$APPLICATION_GROUP ./tools /tools
 
