@@ -70,12 +70,13 @@ RUN apt-get update \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /app \
     && chown -R $APPLICATION_USER:$APPLICATION_GROUP /tools
 
-COPY --chown=$APPLICATION_USER:$APPLICATION_GROUP ./tools /tools
+COPY ./tools /tools
 
 ENV PPTR_VERSION=2.1.0
 
-RUN yarn global add \
-    puppeteer@$PPTR_VERSION \
+RUN fix_permissions \
+    && yarn global add \
+        puppeteer@$PPTR_VERSION \
     && yarn cache clean \
     && fix_permissions
 
