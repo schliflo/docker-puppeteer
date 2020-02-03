@@ -58,7 +58,7 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd -r $APPLICATION_GROUP \
-    && useradd -r -g $APPLICATION_USER -G audio,video $APPLICATION_GROUP \
+    && useradd -r -g $APPLICATION_GROUP -G audio,video $APPLICATION_USER \
     && mkdir -p /home/pptruser/Downloads \
     && mkdir -p /usr/local/share/.config/yarn/global/node_modules \
     && mkdir -p /screenshots \
