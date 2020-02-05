@@ -5,7 +5,7 @@ ENV APPLICATION_USER=pptruser \
     NODE_PATH="/usr/local/share/.config/yarn/global/node_modules:${NODE_PATH}" \
     PATH="/tools:${PATH}" \
     LANG="C.UTF-8" \
-    PPTR_VERSION=2.1.0
+    PPTR_VERSION=2.1.1
 
 COPY ./tools /tools
 
