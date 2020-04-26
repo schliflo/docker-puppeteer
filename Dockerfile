@@ -1,6 +1,4 @@
 ARG NODE_VERSION=12
-ARG PPTR_VERSION=3.0.1
-ARG CHROME_REVISION=737027
 
 FROM node:${NODE_VERSION}-slim
 
@@ -9,8 +7,9 @@ ENV APPLICATION_USER=pptruser \
     NODE_PATH="/usr/local/share/.config/yarn/global/node_modules:${NODE_PATH}" \
     PATH="/tools:${PATH}" \
     LANG="C.UTF-8" \
-    CHROME_BIN="/usr/local/share/.config/yarn/global/node_modules/puppeteer/.local-chromium/linux-${CHROME_REVISION}/chrome-linux/chrome" \
-    PPTR_VERSION=${PPTR_VERSION}
+    PPTR_VERSION=3.0.1 \
+    CHROME_REVISION=737027 \
+    CHROME_BIN="/usr/local/share/.config/yarn/global/node_modules/puppeteer/.local-chromium/linux-$CHROME_REVISION/chrome-linux/chrome"
 
 COPY ./tools /tools
 
