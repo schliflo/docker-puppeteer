@@ -1,0 +1,10 @@
+/.github/
+/.util/
+/node_modules/
+/.dockerignore
+/.gitignore
+/Dockerfile.template
+/LICENSE
+/package.json
+/README.md
+/yarn.lock

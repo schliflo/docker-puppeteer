@@ -1,0 +1,24 @@
+name: Compile Dockerfile template
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile Dockerfile
+        run: .util/compile-dockerfile.sh
+      - name: Commit changes
+        continue-on-error: true
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add Dockerfile
+          git commit -m "[GitHub Action] Update Dockerfile"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        if: success()
+        with:
+          branch: ${{ github.ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
