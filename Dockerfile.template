@@ -8,8 +8,7 @@ ENV APPLICATION_USER=pptruser \
     PATH="/tools:${PATH}" \
     LANG="C.UTF-8" \
     PPTR_VERSION=<PPTR_VERSION> \
-    CHROME_REVISION=<CHROME_REVISION> \
-    CHROME_BIN="/usr/local/share/.config/yarn/global/node_modules/puppeteer/.local-chromium/linux-$CHROME_REVISION/chrome-linux/chrome"
+    CHROME_REVISION=<CHROME_REVISION>
 
 COPY ./tools /tools
 
@@ -75,6 +74,8 @@ RUN apt-get update \
         puppeteer@$PPTR_VERSION \
     && yarn cache clean \
     && fix_permissions
+
+ENV CHROME_BIN="/usr/local/share/.config/yarn/global/node_modules/puppeteer/.local-chromium/linux-${CHROME_REVISION}/chrome-linux/chrome"
 
 WORKDIR /app
 
