@@ -1,6 +1,6 @@
 {
   "private": true,
   "dependencies": {
-    "puppeteer": "^3.0.1"
+    "puppeteer": "^3.0.2"
   }
 }
