@@ -8,7 +8,7 @@ ENV APPLICATION_USER=pptruser \
     PATH="/tools:${PATH}" \
     LANG="C.UTF-8" \
     PPTR_VERSION=5.0.0 \
-    CHROME_REVISION=
+    CHROME_REVISION=756035
 
 COPY ./tools /tools
 
