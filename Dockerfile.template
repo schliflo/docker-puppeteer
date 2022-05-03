@@ -1,4 +1,4 @@
-ARG NODE_VERSION=12
+ARG NODE_VERSION=16
 
 FROM node:${NODE_VERSION}-slim
 
@@ -49,7 +49,6 @@ RUN apt-get update \
         fonts-wqy-zenhei \
         fonts-thai-tlwg \
         fonts-kacst \
-        ttf-freefont \
         ca-certificates \
         fonts-liberation \
         libappindicator1 \
