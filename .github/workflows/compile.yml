@@ -21,4 +21,4 @@ jobs:
         if: success()
         with:
           branch: ${{ github.ref }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PAT }}
