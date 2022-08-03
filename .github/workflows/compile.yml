@@ -2,6 +2,10 @@ name: Compile Dockerfile template
 
 on: [push]
 
+permissions:
+  pull-requests: write
+  contents: write
+
 jobs:
   compile-dockerfile:
     runs-on: ubuntu-latest
@@ -21,4 +25,4 @@ jobs:
         if: success()
         with:
           branch: ${{ github.ref }}
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
