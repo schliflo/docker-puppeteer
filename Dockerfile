@@ -7,8 +7,8 @@ ENV APPLICATION_USER=pptruser \
     NODE_PATH="/usr/local/share/.config/yarn/global/node_modules:${NODE_PATH}" \
     PATH="/tools:${PATH}" \
     LANG="C.UTF-8" \
-    PPTR_VERSION=18.0.5 \
-    CHROME_REVISION=1036745
+    PPTR_VERSION=18.2.0 \
+    CHROME_REVISION=
 
 COPY ./tools /tools
 
