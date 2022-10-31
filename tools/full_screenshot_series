@@ -1,3 +1,3 @@
 #!/bin/bash
 
-env node /tools/fullScreenshotSeries.js "$@"
+env node /home/pptruser/tools/fullScreenshotSeries.js "$@"
