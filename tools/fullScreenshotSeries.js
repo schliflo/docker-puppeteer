@@ -23,8 +23,8 @@ if (!process.argv[2]) {
     console.error('ERROR: no url arg\n');
 
     console.info('for example:\n');
-    console.log('  docker run --shm-size 1G --rm -v /tmp:/screenshots \\');
-    console.log('  alekzonder/puppeteer:latest screenshot \'https://www.google.com\'\n');
+    console.log('  docker run --rm -v /tmp:/home/pptruser/screenshots \\');
+    console.log('  schliflo/docker-puppeteer screenshot \'https://www.google.com\'\n');
     process.exit(1);
 }
 
@@ -72,7 +72,7 @@ let filename = `${dateStr}_full_screenshot_${width}_${height}.png`;
 
     await sleep(delay);
 
-    await page.screenshot({path: `/screenshots/${filename}`, fullPage: true});
+    await page.screenshot({path: `/home/pptruser/screenshots/${filename}`, fullPage: true});
 
     browser.close();
 
