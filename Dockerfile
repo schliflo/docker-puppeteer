@@ -1,8 +1,8 @@
-FROM ghcr.io/puppeteer/puppeteer:22.0.0
+FROM ghcr.io/puppeteer/puppeteer:22.1.0
 
 ENV APPLICATION_USER=pptruser \
     APPLICATION_GROUP=pptruser \
-    PPTR_VERSION=22.0.0 \
+    PPTR_VERSION=22.1.0 \
     PATH="/home/pptruser/tools:${PATH}"
 
 COPY tools tools
